@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    font-family: system-ui;
+}
+
+a {
+    text-decoration: none;
+    color: #03223f;
+}
+
+header {
+    position: absolute;
+    width: 95%;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 30px;
+}
+
+.logoo {
+    font-size: 50px;
+    text-transform: uppercase;
+    background: linear-gradient(to right, rgb(7, 49, 70), #76cadf 50%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+header ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+
+header ul li {
+    margin-right: 30px;
+    font-size: 25px;
+    font-weight: 50px;
+}
+
+header ul li a {
+    padding: 6px 15px;
+    border-radius: 20px;
+}
+
+header ul li a:hover {
+    background: linear-gradient(rgb(35, 117, 184), #ffffff);
+    color: #200016;
+    background: rgb(9, 17, 92);
+    background: linear-gradient(to right, rgb(7, 49, 70), #76cadf 50%);
+}
+
+.main {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+}
+
+.main img {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+
+/* استعلامات الوسائط لتحسين التوافق مع شاشات الجوال */
+@media (max-width: 768px) {
+    .logoo {
+        font-size: 40px;
+    }
+
+    header ul li {
+        margin-right: 20px;
+        font-size: 20px;
+    }
+
+    header ul li a {
+        padding: 5px 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        margin: 10px;
+    }
+
+    .logoo {
+        font-size: 30px;
+        margin-bottom: 10px;
+    }
+
+    header ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header ul li {
+        margin-right: 0;
+        margin-bottom: 10px;
+        font-size: 18px;
+    }
+
+    header ul li a {
+        padding: 4px 8px;
+    }
+
+    .main img {
+        height: auto;
+    }
+}

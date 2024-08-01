@@ -1,0 +1,89 @@
+* {
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background: url(img/image.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.wrapper {
+    width: 100%; margin: 90px 10px 10px 10px;
+}
+.cols {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.col {
+    width: calc(25% - 2rem); margin: 1rem;
+    cursor: pointer;
+}
+.container {
+    transform-style: preserve-3d;
+}
+.front, .back {
+    background-size: cover;
+    background-position: center;
+    backface-visibility: hidden;
+    opacity: 0.8;
+    -webkit-transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+    text-align: center;
+    font-size: 1.5rem;
+    height: 350px; width: 300px; border-radius: 10px; color: #ffffff;
+}
+.back {
+    background: url(img/champo.jpg);
+    background-repeat: no-repeat;
+    background-size: 400px;
+}
+.back {
+    position: absolute; top: 0; left: 0; width: 100%;
+}
+.inner {
+    -webkit-transform: translateY(-50%) translateZ(60px) scale(0.94);
+    top: 50%; position: absolute; left: 0; width: 100%; padding: 2rem;
+}
+.container .back {
+    -webkit-transform: rotateY(180deg); transform: rotateY(180deg);
+}
+.container .front {
+    -webkit-transform: rotateY(0deg); transform: rotateY(0deg);
+    -webkit-transform-style: preserve-3d;
+}
+.container:hover .back {
+    -webkit-transform: rotateY(0deg); transform: rotateY(0deg);
+}
+.container:hover .front {
+    -webkit-transform: rotateY(-180deg); transform: rotateY(-180deg);
+}
+.front .inner p {
+    font-size: 2rem; margin-bottom: 2rem; position: relative;
+}
+
+/* استعلامات الوسائط لتحسين التوافق مع شاشات الجوال */
+@media (max-width: 768px) {
+    .col {
+        width: calc(50% - 2rem);
+    }
+    .front, .back {
+        height: 300px; width: 100%;
+        font-size: 1.2rem;
+    }
+    .wrapper {
+        margin: 50px 5px 5px 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .col {
+        width: 100%;
+    }
+    .front, .back {
+        height: 250px; width: 100%;
+        font-size: 1rem;
+    }
+    .wrapper {
+        margin: 30px 5px 5px 5px;
+    }
+}
